@@ -32,7 +32,7 @@ const User = mongoose.model("YourLab",userSchema)
 app.get('/', (req,res)=>{
 res.status(200).json({"message":"Deplyoed Successfully"})
 })
-app.get('/user', async (req,res)=>{
+app.get('/Showuser', async (req,res)=>{
     const DBusers = await User.find({ })
 res.status(200).send(DBusers)
 })
@@ -70,7 +70,7 @@ res.status(200).send(deletedUser)
 })
 
 
-app.post("/user",async (req,res)=>{
+app.post("/Postuser",async (req,res)=>{
     const body = req.body;
     if(
         !body || !body.name || !body.course
